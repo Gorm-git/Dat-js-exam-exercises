@@ -27,7 +27,7 @@ function createStudent(name, email, age) {
     age: age,
   };
   students.push(newstudent);
-  showStudents();
+  showStudents(showStudent);
 }
 
 function formClicked(event) {
@@ -44,7 +44,7 @@ function formClicked(event) {
 
 function showStudents() {
   document.querySelector("#create-student-form").innerHTML = "";
-  for (let student of students) {
+  for (const student of students) {
     if (student.age >= 18) {
       showStudent(student);
       console.log("Student is above 18");
@@ -54,6 +54,7 @@ function showStudents() {
       return false;
     }
   }
+
   console.log(showStudents);
 }
 
