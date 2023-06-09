@@ -81,7 +81,7 @@ const animals = [];
 
 function initApp() {
   console.log("42");
-  createAnimal("Bo", "abe", 22);
+  // createAnimal("Bo", "abe", 22);
   document
     .querySelector("#create-form")
     .addEventListener("submit", createSubmitAnimal);
