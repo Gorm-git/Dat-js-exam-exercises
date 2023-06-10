@@ -164,6 +164,7 @@ function createAnimal(event) {
 
   const name = form.name.value;
   const type = form.type.value;
+<<<<<<< Updated upstream
   const age = form.age.value;
 
   const newAnimal = { name, type, age };
@@ -171,4 +172,34 @@ function createAnimal(event) {
   animals.push(newAnimal);
   sortAnimalsAge();
   showAnimals(newAnimal);
+=======
+  const age = Number(form.age.value);
+  createAnimal(name, type, age);
+  showAnimals();
+}
+
+function showAnimals() {
+  // sort animals by name
+  animals.sort(sortAnimalName);
+  console.log(animals);
+  // reset tbody
+  document.querySelector("#list-container tbody").innerHTML = "";
+
+  for (const animal of animals) {
+    const html = /*html*/ `
+            <tr>
+                <td>${animal.name}</td>
+                <td>${animal.type}</td>
+                <td>${animal.age}</td>
+            </tr>
+        `;
+    document
+      .querySelector("#list-container tbody")
+      .insertAdjacentHTML("beforeend", html);
+  }
+}
+
+function sortAnimalName(a, b) {
+  return a.name.localeCompare(b.name);
+>>>>>>> Stashed changes
 }
