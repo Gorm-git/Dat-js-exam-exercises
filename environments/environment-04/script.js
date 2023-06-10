@@ -49,3 +49,55 @@
 // function sortTeachersEmail() {
 //   return teachers.sort((a, b) => a.email.localeCompare(b.email));
 // }
+
+// # Øvelse 10
+
+// Environment: `environment-04`
+
+// 1. Importer `teachers`-listen i `script.js`.
+
+// 2. Lav en funktion, der viser listen af alle
+// `teacher`-objekter på websiden.
+
+// 3. Lav en funktion der tilføjer et nyt `teacher`-objekt
+// til listen. Sørg for at nye
+// `teacher`-objekter vises på websiden.
+
+// import teachers from "./teachers.js";
+// console.log(teachers);
+
+// window.addEventListener("load", initApp);
+
+// function initApp() {
+//   console.log("42");
+//   createTeacher("Thomas", "tneermark@gmail.com");
+//   showTeachers();
+// }
+
+// function showTeachers() {
+//   document.querySelector("#teachers-list").innerHTML = "";
+//   for (const teacher of teachers) {
+//     showTeacher(teacher);
+//   }
+// }
+
+// function showTeacher(teachers) {
+//   const html = /*html*/ `
+
+//   <article>
+//   <ul><li>Navn: ${teachers.name}, Email: ${teachers.email}</li></ul>
+//   </article>
+
+//   `;
+//   document
+//     .querySelector("#teachers-list")
+//     .insertAdjacentHTML("beforeend", html);
+// }
+
+// function createTeacher(name, email) {
+//   const newTeacher = { name: name, email: email };
+
+//   teachers.push(newTeacher);
+//   showTeachers(newTeacher);
+//   console.log(teachers);
+// }

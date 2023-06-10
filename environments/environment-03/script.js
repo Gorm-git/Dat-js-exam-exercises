@@ -172,59 +172,59 @@
 // baggrund af valgte `option` i `select` (se `environment-03`).
 // Sortering ændrer sig hver gang en ny sortering `option` vælges.
 
-window.addEventListener("load", initApp);
+// window.addEventListener("load", initApp);
 
-let products = [
-  { name: "B", price: 42, inStock: true },
-  { name: "A", price: 43, inStock: false },
-  { name: "C", price: 41, inStock: false },
-];
-function initApp() {
-  console.log("42");
-  document
-    .querySelector("#select-sort-by")
-    .addEventListener("change", sortProducts);
-  console.log(products);
-  showProducts();
-}
+// let products = [
+//   { name: "B", price: 42, inStock: true },
+//   { name: "A", price: 43, inStock: false },
+//   { name: "C", price: 41, inStock: false },
+// ];
+// function initApp() {
+//   console.log("42");
+//   document
+//     .querySelector("#select-sort-by")
+//     .addEventListener("change", sortProducts);
+//   console.log(products);
+//   showProducts();
+// }
 
-function showProducts() {
-  document.querySelector("#list-container").innerHTML = "";
-  for (const product of products) {
-    showProduct(product);
-  }
-}
+// function showProducts() {
+//   document.querySelector("#list-container").innerHTML = "";
+//   for (const product of products) {
+//     showProduct(product);
+//   }
+// }
 
-function showProduct(products) {
-  const html =
-    /*html*/
-    `
-  <article>
-  <p>Name: ${products.name}</p>
-  <p>Price: ${products.price}</p>
-  <p>In Stock: ${products.inStock}</p>
-  </article>
-  `;
-  document
-    .querySelector("#list-container")
-    .insertAdjacentHTML("beforeend", html);
-}
+// function showProduct(products) {
+//   const html =
+//     /*html*/
+//     `
+//   <article>
+//   <p>Name: ${products.name}</p>
+//   <p>Price: ${products.price}</p>
+//   <p>In Stock: ${products.inStock}</p>
+//   </article>
+//   `;
+//   document
+//     .querySelector("#list-container")
+//     .insertAdjacentHTML("beforeend", html);
+// }
 
-function sortProducts() {
-  const sortCriteria = document.querySelector("#select-sort-by").value;
-  let sortedProducts = products;
-  if (sortCriteria === "name") {
-    sortedProducts = sortedProducts.sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
-  } else if (sortCriteria === "price") {
-    sortedProducts = sortedProducts.sort((a, b) => a.price - b.price);
-  } else if (sortCriteria === "inStock") {
-    sortedProducts = sortedProducts.sort((a, b) => a.inStock - b.inStock);
-  }
+// function sortProducts() {
+//   const sortCriteria = document.querySelector("#select-sort-by").value;
+//   let sortedProducts = products;
+//   if (sortCriteria === "name") {
+//     sortedProducts = sortedProducts.sort((a, b) =>
+//       a.name.localeCompare(b.name)
+//     );
+//   } else if (sortCriteria === "price") {
+//     sortedProducts = sortedProducts.sort((a, b) => a.price - b.price);
+//   } else if (sortCriteria === "inStock") {
+//     sortedProducts = sortedProducts.sort((a, b) => a.inStock - b.inStock);
+//   }
 
-  showProducts(sortProducts);
-}
+//   showProducts(sortProducts);
+// }
 
 // const memberSortProducts = document.querySelector("#select-sort-by");
 // memberSortProducts.addEventListener("change", sortProducts);

@@ -17,4 +17,5 @@ const teachers = [
   },
 ];
 
+// export default teachers;
 export default teachers;
