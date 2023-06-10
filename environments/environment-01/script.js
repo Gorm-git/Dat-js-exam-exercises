@@ -168,7 +168,6 @@ function showUser(users) {
 
   document.querySelector("#userlist").insertAdjacentHTML("beforeend", html);
 }
-<<<<<<< Updated upstream
 
 function createUser(name, active, role) {
   const newUser = {
@@ -211,5 +210,3 @@ function displayAdmins() {
   const admins = usersGlobal.filter((user) => user.role === "admin");
   displayUsers(admins);
 }
-=======
->>>>>>> Stashed changes
