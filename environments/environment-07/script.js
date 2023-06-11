@@ -113,45 +113,46 @@
 
 // 3. Brug funktionen til at fjerne students uden korrekt email fra listen.
 
-let students = [];
+// let students = [];
 
-window.addEventListener("load", initApp);
+// window.addEventListener("load", initApp);
 
-function initApp() {
-  console.log("42");
-  // console.log(isEmailValid("te@stud.kea.dk"));
-  // console.log(isEmailValid("test@stud.kea.dk"));
-  // console.log(isEmailValid("test@stud.ka.dk"));
-  document
-    .querySelector("#create-student-form")
-    .addEventListener("submit", createStudentSubmit);
-  console.log(students);
-}
+// function initApp() {
+//   console.log("42");
+//   // console.log(isEmailValid("te@stud.kea.dk"));
+//   // console.log(isEmailValid("test@stud.kea.dk"));
+//   // console.log(isEmailValid("test@stud.ka.dk"));
+//   document
+//     .querySelector("#create-student-form")
+//     .addEventListener("submit", createStudentSubmit);
+//   console.log(students);
+// }
 
-function createStudent(name, email, age) {
-  const newstudent = { name: name, email: email, age: age };
-  students.push(newstudent);
-  console.log(newstudent);
-  checkEmail();
-}
+// function createStudent(name, email, age) {
+//   const newstudent = { name: name, email: email, age: age };
+//   students.push(newstudent);
+//   console.log(newstudent);
+//   checkEmail();
+// }
 
-function createStudentSubmit(event) {
-  console.log(event);
-  event.preventDefault();
-  const form = event.target;
+// function createStudentSubmit(event) {
+//   console.log(event);
+//   event.preventDefault();
+//   const form = event.target;
 
-  const name = form.name.value;
-  const email = form.email.value;
-  const age = Number(form.age.value);
+//   const name = form.name.value;
+//   const email = form.email.value;
+//   const age = Number(form.age.value);
 
-  createStudent(name, email, age);
+//   createStudent(name, email, age);
+// }
 
-  // document
-  //   .querySelector("#create-student-form")
-  //   .addEventListener("submit", createStudentSubmit);
+// document
+//   .querySelector("#create-student-form")
+//   .addEventListener("submit", createStudentSubmit);
 
-  console.log(students);
-}
+//   console.log(students);
+// }
 
 // function validateEmails() {
 //   students = students.filter((student) => isEmailValid(student.email));
@@ -170,13 +171,13 @@ function createStudentSubmit(event) {
 //   // return prefix.length >= 4 && domain === "stud.kea.dk";
 // }
 
-function checkEmail() {
-  const input = document.querySelector("#email").value;
+// function checkEmail() {
+//   const input = document.querySelector("#email").value;
 
-  if (input.length >= 16 && input.includes("@stud.kea.dk")) {
-    console.log(input);
-  } else {
-    const target = students.indexOf(students.includes(input));
-    students.splice(target, 1);
-  }
-}
+//   if (input.length >= 16 && input.includes("@stud.kea.dk")) {
+//     console.log(input);
+//   } else {
+//     const target = students.indexOf(students.includes(input));
+//     students.splice(target, 1);
+//   }
+// }
