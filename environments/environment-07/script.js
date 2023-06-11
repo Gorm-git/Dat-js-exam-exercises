@@ -44,11 +44,6 @@
 //   showStudents(showStudent);
 // }
 
-// function formClicked(event) {
-//   event.preventDefault();
-
-//   const form = event.target;
-// }
 // function showStudents(listOfStudents) {
 //     // reset DOM
 //     document.querySelector("#students-table-body").innerHTML = "";
@@ -181,3 +176,149 @@
 //     students.splice(target, 1);
 //   }
 // }
+
+// # Øvelse 20
+
+// Environment: `environment-07`
+
+// *Prøveeksamen #2*
+
+// 1. Lav en funktion der opretter et `student`
+// objekt med `name`, `email` og `age`, fra formularen på websiden og
+// tilføjer det til en liste.
+
+// 2. Udskriv listen til websiden hver
+// gang der bliver tilføjet en ny student.
+
+// 3. Sortér listen efter `age`
+// så de yngste vises først.
+
+// const students = [];
+
+// window.addEventListener("load", initApp);
+
+// function initApp() {
+//   console.log("42 is the meaning?");
+//   document
+//     .querySelector("#create-student-form")
+//     .addEventListener("submit", createStudentForm);
+//   console.log(students);
+// }
+
+// function createStudent(name, email, age) {
+//   const newstudent = { name: name, email: email, age: age };
+//   students.push(newstudent);
+//   console.log(newstudent);
+//   console.log(students);
+// }
+
+// function createStudentForm(event) {
+//   event.preventDefault();
+
+//   const form = event.target;
+
+//   const name = form.name.value;
+//   const email = form.email.value;
+//   const age = Number(form.age.value);
+
+//   createStudent(name, email, age);
+//   sortStudentAge();
+//   showStudents(students);
+// }
+
+// function showStudents() {
+//   document.querySelector("#students-table-body").innerHTML = "";
+//   for (const student of students) {
+//     showStudent(student);
+//   }
+// }
+
+// function showStudent(students) {
+//   const html = /*html */ `
+//   <tr>
+//    <td>${students.name}</td>
+//    <td>${students.email}</td>
+//    <td>${students.age}</td>
+//   </tr>
+//   `;
+
+//   document
+//     .querySelector("#students-table-body")
+//     .insertAdjacentHTML("beforeend", html);
+// }
+
+// function sortStudentAge() {
+//   students.sort((a, b) => a.age - b.age);
+// }
+
+// # Øvelse 21
+
+// Environment: `environment-07`
+
+// *Prøveeksamen #3*
+
+// 1. Lav en funktion der opretter et `student` objekt med
+// `name`, `email` og `age`, fra formularen på websiden
+// og tilføjer det til en liste.
+
+// 2. Lav en anden funktion til at vise listen på websiden,
+// men undlad eventuelle students der er under 18 år.
+
+// 3. Sortér listen alfabetisk efter `name`.
+
+const students = [];
+
+window.addEventListener("load", initApp);
+
+function initApp() {
+  console.log("What is the meaning of 42");
+  document
+    .querySelector("#create-student-form")
+    .addEventListener("submit", createStudentForm);
+}
+
+function createStudent(name, email, age) {
+  const newstudent = { name: name, email: email, age: age };
+
+  students.push(newstudent);
+  console.log(newstudent);
+  showStudents();
+}
+
+function createStudentForm(event) {
+  event.preventDefault();
+
+  const form = event.target;
+
+  const name = form.name.value;
+  const email = form.email.value;
+  const age = Number(form.age.value);
+
+  createStudent(name, email, age);
+}
+
+function showStudents() {
+  document.querySelector("#students-table-body").innerHTML = "";
+  students.sort((a, b) => a.name.localeCompare(b.name));
+  for (const student of students) {
+    if (student.age >= 18) {
+      showStudent(student);
+      console.log("Student is above 18");
+    } else {
+      console.log("Student is not 18");
+    }
+  }
+  console.log(students); // Log the students array after showing them
+}
+function showStudent(students) {
+  const html = /*html */ `
+    <tr>
+      <td>${students.name}</td>
+      <td>${students.email}</td>
+      <td>${students.age}</td>
+    </tr>
+  `;
+  document
+    .querySelector("#students-table-body")
+    .insertAdjacentHTML("beforeend", html);
+}
