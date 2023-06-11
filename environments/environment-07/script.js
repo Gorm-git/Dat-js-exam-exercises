@@ -97,3 +97,86 @@
 //     .querySelector("#students-table-body")
 //     .insertAdjacentHTML("beforeend", html);
 // }
+
+// # Øvelse 19
+
+// Environment: `environment-07`
+
+// *Prøveeksamen #1*
+
+// 1. Lav en funktion der opretter et `student` objekt
+//  med `name`, `email` og `age`,
+//  fra formularen på websiden og tilføjer det til en liste.
+
+// 2. Lav en funktion der tjekker om en student har en
+// korrekt email der består af mindst 4 tegn efterfulgt af @stud.kea.dk
+
+// 3. Brug funktionen til at fjerne students uden korrekt email fra listen.
+
+let students = [];
+
+window.addEventListener("load", initApp);
+
+function initApp() {
+  console.log("42");
+  // console.log(isEmailValid("te@stud.kea.dk"));
+  // console.log(isEmailValid("test@stud.kea.dk"));
+  // console.log(isEmailValid("test@stud.ka.dk"));
+  document
+    .querySelector("#create-student-form")
+    .addEventListener("submit", createStudentSubmit);
+  console.log(students);
+}
+
+function createStudent(name, email, age) {
+  const newstudent = { name: name, email: email, age: age };
+  students.push(newstudent);
+  console.log(newstudent);
+  checkEmail();
+}
+
+function createStudentSubmit(event) {
+  console.log(event);
+  event.preventDefault();
+  const form = event.target;
+
+  const name = form.name.value;
+  const email = form.email.value;
+  const age = Number(form.age.value);
+
+  createStudent(name, email, age);
+
+  // document
+  //   .querySelector("#create-student-form")
+  //   .addEventListener("submit", createStudentSubmit);
+
+  console.log(students);
+}
+
+// function validateEmails() {
+//   students = students.filter((student) => isEmailValid(student.email));
+// }
+
+// function isEmailValid(email) {
+//   const mailArray = email.split("@");
+//   const prefix = mailArray[0];
+//   const domain = mailArray[1];
+
+//   if (prefix.length >= 4 && domain === "stud.kea.dk") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+//   // return prefix.length >= 4 && domain === "stud.kea.dk";
+// }
+
+function checkEmail() {
+  const input = document.querySelector("#email").value;
+
+  if (input.length >= 16 && input.includes("@stud.kea.dk")) {
+    console.log(input);
+  } else {
+    const target = students.indexOf(students.includes(input));
+    students.splice(target, 1);
+  }
+}
