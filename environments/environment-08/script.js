@@ -123,6 +123,7 @@
 //   }
 // }
 
+//Du kan bruge den her version til
 // function moveUp(songObject) {
 //   const index = songs.findIndex((song) => song === songObject); // Find the index of the clicked song in the songs array
 
@@ -131,4 +132,84 @@
 //     [songs[index - 1], songs[index]] = [songs[index], songs[index - 1]];
 //     showSongs(); // Update the song list
 //   }
+// }
+
+// # Øvelse 24
+
+// Environment: `environment-08`
+
+// *Prøveeksamen #6 (sæt 2)*
+
+// 1. Lav en liste over sange, og lav en funktion til at tilføje et
+// sang-objekt med `artist`, `title` og `duration` fra formularen på websiden.
+
+// 2. Lav en funktion til at udskrive listen af sange på websiden.
+
+// 3. Sortér listen alfabetisk efter `artist` eller `
+// title` alt efter hvad der bliver valgt på websiden.
+
+// let songs = [];
+
+// window.addEventListener("load", initApp);
+
+// function initApp() {
+//   console.log("42");
+//   document
+//     .querySelector("#add-song-form")
+//     .addEventListener("submit", createSongForm);
+//   document
+//     .querySelector("#sort-songs-form")
+//     .addEventListener("change", sortSong);
+//   console.log(songs);
+// }
+
+// function createSong(artist, title, duration) {
+//   const newSong = { artist: artist, title: title, duration: duration };
+
+//   songs.push(newSong);
+//   console.log(newSong);
+// }
+
+// function createSongForm(event) {
+//   event.preventDefault();
+//   const form = event.target;
+
+//   const artist = form.name.value;
+//   const title = form.title.value;
+//   const duration = form.duration.value;
+
+//   createSong(artist, title, duration);
+//   showSongs();
+//   console.log(songs);
+// }
+
+// function showSongs() {
+//   document.querySelector("#songlist").innerHTML = "";
+
+//   for (const song of songs) {
+//     showSong(song);
+//   }
+// }
+
+// function showSong(song) {
+//   const html = /* html*/ `
+
+//   <li>Artist: ${song.artist}, Title: ${song.title}, Duration: ${song.duration}</li>
+
+//   `;
+//   document.querySelector("#songlist").insertAdjacentHTML("beforeend", html);
+// }
+
+// function sortSong(event) {
+//   const sortCriteria = event.target.checked;
+//   // let sortedSong = songs;
+
+//   if (sortCriteria === "artist") {
+//     songs.sort((a, b) => a.artist.localeCompare(b.artist));
+//   } else if (sortCriteria === "title") {
+//     songs.sort((a, b) => a.title.localeCompare(b.title));
+//   }
+
+//   showSongs();
+//   console.log(sortCriteria);
 // }
